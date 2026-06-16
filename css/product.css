@@ -95,6 +95,18 @@
     color: #666;
 }
 
+.product-contact::before {
+    content: "";
+
+    display: block;
+
+    width: 120px;
+    height: 2px;
+
+    background: var(--gold);
+
+    margin: 0 auto 40px;
+}
 
 /* =========================
    WHATSAPP BUTTON
@@ -108,24 +120,26 @@
 .cta-btn {
     display: inline-block;
 
-    padding: 15px 35px;
+    padding: 18px 40px;
 
-    background: #b8860b;
-    color: white;
+    background: var(--gold);
+    color: var(--warm-white);
+
+    border-radius: 999px;
 
     text-decoration: none;
 
-    border-radius: 50px;
-
     font-weight: 600;
+    letter-spacing: 0.5px;
 
     transition: all 0.3s ease;
 }
 
 .cta-btn:hover {
-    transform: translateY(-3px);
-}
+    transform: translateY(-4px);
 
+    box-shadow: 0 10px 25px rgba(201,150,58,.35);
+}
 
 /* =========================
    LIGHTBOX
