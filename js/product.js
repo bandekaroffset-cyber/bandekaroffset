@@ -28,8 +28,8 @@ const products = {
         description: "Professional marketing materials that effectively showcase your products and services.",
 
         images: [
-            "images/brochures/1.jpg",
-            "images/brochures/2.jpg"
+            "images/Brochures/broucherjpg",
+            "images/Brochures/KK Birla Goa Campus.webp"
         ]
     },
 
