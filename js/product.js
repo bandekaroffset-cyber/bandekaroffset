@@ -122,21 +122,21 @@ const products = {
             "images/Wedding cards/Reshma Weds Ayub.webp",
             "images/Wedding cards/Ruksar & Iliyas.webp"
             ]
+    },
     
      id_card: {
         title:"ID Card",
         description:"High-quality employee, student, visitor, and membership identification cards.",
         images:[
             ]
+     },
             
      stamps: {
         title:"Stamps",
         description:"Custom rubber stamps, self-inking stamps, date stamps, embossing seals, and common seals.",
         images:[
             ]
-    },
-
-    
+    }
 
 };
 
