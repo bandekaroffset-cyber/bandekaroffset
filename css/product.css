@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&family=Tangerine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Tangerine:wght@700&family=Italianno&display=swap');
 
 /* ── VARIABLES ── */
 :root {
@@ -184,39 +184,6 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
     font-weight: 600;
 
     color: #666;
-}
-
-/* =========================
-   WHATSAPP BUTTON
-========================= */
-
-.product-contact {
-    text-align: center;
-    padding-bottom: 80px;
-}
-
-.cta-btn {
-    display: inline-block;
-
-    padding: 18px 40px;
-
-    background: var(--gold);
-    color: var(--warm-white);
-
-    border-radius: 999px;
-
-    text-decoration: none;
-
-    font-weight: 600;
-    letter-spacing: 0.5px;
-
-    transition: all 0.3s ease;
-}
-
-.cta-btn:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 10px 25px rgba(201,150,58,.35);
 }
 
 /* =========================
