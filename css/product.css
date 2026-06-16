@@ -95,19 +95,6 @@
     color: #666;
 }
 
-.product-contact::before {
-    content: "";
-
-    display: block;
-
-    width: 120px;
-    height: 2px;
-
-    background: var(--gold);
-
-    margin: 0 auto 40px;
-}
-
 /* =========================
    WHATSAPP BUTTON
 ========================= */
