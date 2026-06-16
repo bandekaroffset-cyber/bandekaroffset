@@ -151,25 +151,66 @@ const product = products[service];
 
 const title = document.getElementById("productTitle");
 const description = document.getElementById("productDescription");
-const gallery = document.getElementById("gallery");
+
+const sliderImage = document.getElementById("sliderImage");
+const imageCounter = document.getElementById("imageCounter");
+
+let currentIndex = 0;
 
 if (product) {
 
     title.textContent = product.title;
     description.textContent = product.description;
 
-    product.images.forEach(image => {
+    if (product.images.length > 0) {
 
-        const img = document.createElement("img");
+        function showImage(index) {
 
-        img.src = image;
-        img.alt = product.title;
+            sliderImage.src = product.images[index];
+            sliderImage.alt = product.title;
 
-        img.classList.add("gallery-image");
+            imageCounter.textContent =
+                `${index + 1} / ${product.images.length}`;
+        }
 
-        gallery.appendChild(img);
+        showImage(currentIndex);
 
-    });
+        document.getElementById("prevBtn")
+            .addEventListener("click", () => {
+
+                currentIndex--;
+
+                if (currentIndex < 0) {
+                    currentIndex = product.images.length - 1;
+                }
+
+                showImage(currentIndex);
+
+            });
+
+        document.getElementById("nextBtn")
+            .addEventListener("click", () => {
+
+                currentIndex++;
+
+                if (currentIndex >= product.images.length) {
+                    currentIndex = 0;
+                }
+
+                showImage(currentIndex);
+
+            });
+
+    } else {
+
+        sliderImage.style.display = "none";
+
+        imageCounter.textContent =
+            "Images will be added soon.";
+
+        document.getElementById("prevBtn").style.display = "none";
+        document.getElementById("nextBtn").style.display = "none";
+    }
 
 } else {
 
@@ -179,20 +220,15 @@ if (product) {
         "Sorry, this product gallery does not exist.";
 
 }
-
-
 // LIGHTBOX
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const closeLightbox = document.getElementById("closeLightbox");
 
-document.addEventListener("click", function(e) {
+sliderImage.addEventListener("click", () => {
 
-    if (!e.target.classList.contains("gallery-image"))
-        return;
-
-    lightboxImage.src = e.target.src;
+    lightboxImage.src = sliderImage.src;
 
     lightbox.style.display = "flex";
 
