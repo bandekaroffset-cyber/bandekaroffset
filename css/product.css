@@ -1,14 +1,6 @@
-/* PRODUCT PAGE */
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'DM Sans', sans-serif;
-    background: #faf9f6;
-    color: #222;
-}
-
-/* HERO */
+/* =========================
+   PRODUCT PAGE
+========================= */
 
 .product-hero {
     text-align: center;
@@ -32,40 +24,81 @@ body {
 }
 
 
-/* GALLERY */
+/* =========================
+   SLIDER
+========================= */
 
 .product-gallery {
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 24px 80px;
+    padding: 0 20px 80px;
 }
 
-#gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
 }
 
-.gallery-image {
+.slider-image {
     width: 100%;
-    height: auto;
+    max-width: 900px;
+    max-height: 700px;
+
     object-fit: contain;
-    border-radius: 16px;
+
+    border-radius: 18px;
+
     cursor: pointer;
-    transition: all 0.35s ease;
+
+    transition: transform 0.3s ease;
 }
 
-.gallery-image:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+.slider-image:hover {
+    transform: scale(1.01);
+}
+
+.slider-btn {
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    background: #b8860b;
+    color: white;
+
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    transform: scale(1.1);
+}
+
+#imageCounter {
+    text-align: center;
+    margin-top: 20px;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    color: #666;
 }
 
 
-/* WHATSAPP BUTTON */
+/* =========================
+   WHATSAPP BUTTON
+========================= */
 
 .product-contact {
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 }
 
 .cta-btn {
@@ -90,18 +123,19 @@ body {
 }
 
 
-/* LIGHTBOX */
+/* =========================
+   LIGHTBOX
+========================= */
 
 .lightbox {
     position: fixed;
     inset: 0;
 
-    background: rgba(0,0,0,0.9);
-
     display: none;
-
     justify-content: center;
     align-items: center;
+
+    background: rgba(0,0,0,0.92);
 
     z-index: 9999;
 }
@@ -110,38 +144,45 @@ body {
     max-width: 90%;
     max-height: 90vh;
 
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 #closeLightbox {
     position: absolute;
 
     top: 20px;
-    right: 30px;
+    right: 35px;
 
     color: white;
-
     font-size: 3rem;
 
     cursor: pointer;
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
 
-    .product-hero {
-        padding-top: 90px;
+    .slider-container {
+        gap: 10px;
     }
 
-    .gallery-image {
-        height: 240px;
+    .slider-image {
+        max-width: 100%;
+    }
+
+    .slider-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
     }
 
     #closeLightbox {
-        font-size: 2.5rem;
         right: 20px;
+        font-size: 2.5rem;
     }
 
 }
