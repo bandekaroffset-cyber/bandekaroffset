@@ -1,36 +1,21 @@
-// PRODUCTS DATA
 const products = {
 
-    printondemand: {
-      title: "Print On Demand (POD)",
-      description: "Custom printing solutions for t-shirts, mugs, merchandise, gifts, and promotional products with no minimum order quantity.",
-      images: [
-        "images/print_on_demand1/webp"
-      ]
-    },
-
-    printondemand: {
-      title: "Books & Booklets",
-      description: "Premium-quality books, catalogues, annual reports, manuals, and booklets.",
-      images: [
-        "images/Book/satya ke talash.jpg"
-      ]
-    },
-
-    
     wedding: {
         title: "Wedding Invitations",
         description: "Beautifully crafted invitation cards designed to make your special occasion memorable.",
+
         images: [
             "images/wedding/1.jpg",
             "images/wedding/2.jpg",
-            "images/wedding/3.jpg"
+            "images/wedding/3.jpg",
+            "images/wedding/4.jpg"
         ]
     },
 
     books: {
         title: "Books & Booklets",
         description: "Premium-quality books, catalogues, annual reports, manuals, and booklets.",
+
         images: [
             "images/books/1.jpg",
             "images/books/2.jpg",
@@ -41,6 +26,7 @@ const products = {
     brochures: {
         title: "Brochures & Leaflets",
         description: "Professional marketing materials that effectively showcase your products and services.",
+
         images: [
             "images/brochures/1.jpg",
             "images/brochures/2.jpg"
@@ -50,6 +36,7 @@ const products = {
     menus: {
         title: "Restaurant Menus",
         description: "Durable and attractive menu designs that enhance your customers' dining experience.",
+
         images: [
             "images/menus/1.jpg",
             "images/menus/2.jpg"
@@ -62,34 +49,27 @@ const products = {
 // GET URL PARAMETER
 
 const params = new URLSearchParams(window.location.search);
+
 const service = params.get("service");
-
-
-// FIND PRODUCT
 
 const product = products[service];
 
-
-// LOAD CONTENT
+const title = document.getElementById("productTitle");
+const description = document.getElementById("productDescription");
+const gallery = document.getElementById("gallery");
 
 if (product) {
 
-    document.getElementById("productTitle").textContent =
-        product.title;
-
-    document.getElementById("productDescription").textContent =
-        product.description;
-
-    const gallery =
-        document.getElementById("gallery");
+    title.textContent = product.title;
+    description.textContent = product.description;
 
     product.images.forEach(image => {
 
-        const img =
-            document.createElement("img");
+        const img = document.createElement("img");
 
         img.src = image;
         img.alt = product.title;
+
         img.classList.add("gallery-image");
 
         gallery.appendChild(img);
@@ -98,34 +78,43 @@ if (product) {
 
 } else {
 
-    document.getElementById("productTitle").textContent =
-        "Product Not Found";
+    title.textContent = "Product Not Found";
 
-    document.getElementById("productDescription").textContent =
-        "The requested product could not be found.";
+    description.textContent =
+        "Sorry, this product gallery does not exist.";
 
 }
 
 
-// IMAGE LIGHTBOX
+// LIGHTBOX
 
-document.addEventListener("click", function (e) {
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeLightbox = document.getElementById("closeLightbox");
+
+document.addEventListener("click", function(e) {
 
     if (!e.target.classList.contains("gallery-image"))
         return;
 
-    const overlay = document.createElement("div");
+    lightboxImage.src = e.target.src;
 
-    overlay.className = "image-overlay";
+    lightbox.style.display = "flex";
 
-    overlay.innerHTML = `
-        <img src="${e.target.src}" alt="">
-    `;
+});
 
-    overlay.addEventListener("click", () => {
-        overlay.remove();
-    });
+closeLightbox.addEventListener("click", () => {
 
-    document.body.appendChild(overlay);
+    lightbox.style.display = "none";
+
+});
+
+lightbox.addEventListener("click", (e) => {
+
+    if (e.target === lightbox) {
+
+        lightbox.style.display = "none";
+
+    }
 
 });
