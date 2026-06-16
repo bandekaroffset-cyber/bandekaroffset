@@ -1,26 +1,31 @@
 /* =========================
    PRODUCT PAGE
 ========================= */
-
 .product-hero {
     text-align: center;
     padding: 120px 20px 60px;
+    background: var(--ink);
+    color: var(--cream);
+
+    text-align: center;
+    padding: 140px 20px 80px;
 }
 
 .product-hero h1 {
     font-family: 'Tangerine', cursive;
     font-size: clamp(3rem, 8vw, 5.5rem);
-    color: #b8860b;
     margin-bottom: 1rem;
     line-height: 1.1;
+    color: var(--gold);
 }
 
 .product-hero p {
+    color: rgba(245,240,232,.8);
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.05rem;
     line-height: 1.8;
-    color: #666;
+   
 }
 
 
@@ -29,9 +34,11 @@
 ========================= */
 
 .product-gallery {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px 80px;
+    margin-top: -30px;
+
+    border-radius: 30px 30px 0 0;
+
+    background: var(--cream);
 }
 
 .slider-container {
