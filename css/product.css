@@ -48,13 +48,10 @@ body {
 
 .gallery-image {
     width: 100%;
-    height: 320px;
-    object-fit: cover;
-
+    height: auto;
+    object-fit: contain;
     border-radius: 16px;
-
     cursor: pointer;
-
     transition: all 0.35s ease;
 }
 
