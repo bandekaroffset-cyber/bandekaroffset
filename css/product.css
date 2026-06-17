@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Tangerine:wght@700&family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Tangerine:wght@700&display=swap');
 
 /* ── VARIABLES ── */
 :root {
@@ -7,12 +7,11 @@
     --gold:        #c9963a;
     --gold-light:  #e8bb6a;
     --warm-white:  #faf8f4;
+    --sepia:       #f2ebe0;      
+    --sepia-dark:  #e6dccf;
     --mid:         #6b6560;
     --rule:        rgba(201,150,58,.25);
-    
-    --letter-bg:   #fffef9;    
-    --line-rule:   rgba(201,150,58,.1); 
-    --field-bg:    #fdfcf8;
+    --rule-soft:   rgba(107,101,96,.15);
 }
 
 /* ── RESET ── */
@@ -20,7 +19,7 @@
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
     font-family: 'DM Sans', sans-serif;
-    background: #f7f3ec;
+    background: var(--sepia);
     color: var(--ink);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -30,7 +29,7 @@ body {
 /* ══ NAVBAR ══ */
 nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(247,243,236,.95);
+    background: rgba(242,235,224,.95);
     backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--rule);
     padding: 0 2rem; height: 70px;
@@ -40,8 +39,10 @@ nav {
 nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 
 .nav-logo {
-    font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.4rem;
-    letter-spacing: -.5px; color: var(--ink); text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; font-size: 1.4rem;
+    letter-spacing: -.5px; color: var(--ink);
+    text-decoration: none;
     display: flex; align-items: center; gap: .6rem;
 }
 .nav-logo span { color: var(--gold); }
@@ -83,7 +84,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 
 .mobile-menu {
     display: none; position: fixed; top: 70px; left: 0; right: 0;
-    background: var(--cream); border-bottom: 1px solid var(--rule);
+    background: var(--sepia); border-bottom: 1px solid var(--rule);
     padding: 1.5rem 2rem; z-index: 99;
     flex-direction: column; gap: 1.25rem;
 }
@@ -92,6 +93,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
     font-size: 1rem; color: var(--ink); text-decoration: none;
     font-weight: 500; padding: .25rem 0; border-bottom: 1px solid var(--rule);
 }
+
 .product-hero {
     text-align: center;
     padding: 120px 20px 60px;
@@ -315,6 +317,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
     transition: background .25s, color .25s, transform .25s; margin: 0 .5rem;
 }
 .cta-btn-gold:hover { background: transparent; color: var(--gold); transform: translateY(-2px); }
+
 
 
 /* ══ FOOTER ══ */
