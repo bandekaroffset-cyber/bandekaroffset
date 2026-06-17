@@ -256,7 +256,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
         font-size: 2.5rem;
     }
 
-    /* ══ CTA STRIP ══ */
+   /* ══ CTA STRIP ══ */
 .contact-strip {
     background: var(--ink); padding: 5rem 2rem;
     text-align: center; color: #fff;
@@ -315,7 +315,6 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
     transition: background .25s, color .25s, transform .25s; margin: 0 .5rem;
 }
 .cta-btn-gold:hover { background: transparent; color: var(--gold); transform: translateY(-2px); }
-
 
 
 /* ══ FOOTER ══ */
