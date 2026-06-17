@@ -227,7 +227,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 
     cursor: pointer;
 }
-
+}
 
 /* =========================
    MOBILE
@@ -387,4 +387,3 @@ footer h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
     .timeline { padding-left: 2rem; }
 }
 
-}
