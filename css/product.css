@@ -133,29 +133,22 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
     display: flex;
     align-items: center;
     justify-content: center;
-
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-
-    gap: 25px;
+    gap: 20px;
 }
 
 .slider-image {
     width: auto;
-    max-width: 75%;
-    max-height: 550px;
-
+    max-width: 65%;
+    max-height: 420px;
     height: auto;
-
     object-fit: contain;
-
     border-radius: 18px;
-
     cursor: pointer;
-
     transition: transform 0.3s ease;
 }
-}
+
 .slider-image:hover {
     transform: scale(1.01);
 }
@@ -163,25 +156,32 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 .slider-btn {
     width: 50px;
     height: 50px;
-
     min-width: 50px;
-
-    font-size: 1.5rem;
-
+    font-size: 1.3rem;
     border-radius: 50%;
+    background: var(--gold);
+    color: var(--ink);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s, background 0.2s;
+    flex-shrink: 0;
 }
 
 .slider-btn:hover {
     transform: scale(1.1);
+    background: var(--gold-light);
 }
 
 #imageCounter {
     text-align: center;
     margin-top: 20px;
-
     font-size: 1rem;
     font-weight: 600;
-
     color: #666;
 }
 
@@ -192,68 +192,54 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 .lightbox {
     position: fixed;
     inset: 0;
-
     display: none;
     justify-content: center;
     align-items: center;
-
     background: rgba(0,0,0,0.92);
-
     z-index: 9999;
 }
 
 .lightbox img {
     max-width: 90%;
     max-height: 90vh;
-
     border-radius: 12px;
 }
 
 #closeLightbox {
     position: absolute;
-
     top: 20px;
     right: 35px;
-
     color: white;
     font-size: 3rem;
-
     cursor: pointer;
 }
-}
-
 
 /* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 768px) {
-
     .slider-container {
-        gap: 5px;
+        gap: 8px;
     }
 
     .slider-btn {
-        width: 45px;
-        height: 45px;
-        min-width: 45px;
-
-        font-size: 1.2rem;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 1rem;
     }
 
-  
     .slider-image {
-        max-width: 70%;
-        max-height: 300px;
+        max-width: 75%;
+        max-height: 260px;
     }
-}
-
-
 
     #closeLightbox {
         right: 20px;
         font-size: 2.5rem;
     }
+}
 
    /* ══ CTA STRIP ══ */
 .contact-strip {
