@@ -141,9 +141,11 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 }
 
 .slider-image {
-    width: 100%;
-    max-width: 900px;
-    max-height: 700px;
+    width: auto;
+    height: auto;
+
+    max-width: 700px;
+    max-height: 550px;
 
     object-fit: contain;
 
@@ -153,7 +155,6 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 
     transition: transform 0.3s ease;
 }
-
 .slider-image:hover {
     transform: scale(1.01);
 }
@@ -225,6 +226,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 
     cursor: pointer;
 }
+}
 
 
 /* =========================
@@ -247,9 +249,11 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
     }
 
     .slider-image {
-        width: calc(100% - 120px);
-        max-width: none;
-    }
+    max-width: 75vw;
+    max-height: 350px;
+    width: auto;
+    height: auto;
+}
 
     #closeLightbox {
         right: 20px;
@@ -383,5 +387,4 @@ footer h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
     .values-grid { grid-template-columns: 1fr; }
     .timeline { padding-left: 2rem; }
 }
-
 }
