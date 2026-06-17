@@ -89,12 +89,6 @@ const products = {
         images: []
     },
 
-    flex_banner: {
-        title: "Flex Banner",
-        description: "Weather-resistant flex printing solutions for outdoor advertising and event promotions.",
-        images: []
-    },
-
     led_signage: {
         title: "LED Signage",
         description: "Eye-catching illuminated signboards and LED displays for businesses and retail stores.",
