@@ -457,3 +457,50 @@ footer h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
     .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
     .cta-btn-dark, .cta-btn-gold { margin: .4rem 0; display: flex; }
 }
+
+/* ══ SERVICE CAROUSEL — INSTAGRAM STYLE ══ */
+.carousel-wrap { position: relative; }
+
+.service-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 2px;
+    user-select: none;
+    cursor: grab;
+}
+.service-carousel.dragging { cursor: grabbing; }
+
+.service-carousel img {
+    width: 100%;
+    display: none;
+    border-radius: 2px;
+    pointer-events: none;
+    /* smooth fade between slides */
+    transition: opacity .25s ease;
+}
+.service-carousel img.active { display: block; }
+
+/* dot strip */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: .65rem 0 .25rem;
+}
+.carousel-dots .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--sepia-dark);
+    border: 1.5px solid rgba(107,101,96,.3);
+    cursor: pointer;
+    transition: background .25s, transform .2s, width .25s;
+    flex-shrink: 0;
+}
+.carousel-dots .dot.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    width: 20px;
+    border-radius: 4px;
+}
