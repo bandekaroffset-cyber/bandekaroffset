@@ -199,6 +199,22 @@ carousels.forEach((carousel) => {
     carousel.addEventListener('mousedown',  e => onDragStart(e.clientX));
     carousel.addEventListener('mouseup',    e => onDragEnd(e.clientX));
     carousel.addEventListener('mouseleave', e => { if (dragging) onDragEnd(e.clientX); });
+
+    /* ── keyboard navigation (focus-based) ── */
+    carousel.setAttribute('tabindex', '0');
+
+    carousel.addEventListener('focus', () => {
+        carousel.addEventListener('keydown', onKeyDown);
+    });
+    carousel.addEventListener('blur', () => {
+        carousel.removeEventListener('keydown', onKeyDown);
+    });
+    carousel.addEventListener('mouseenter', () => carousel.focus({ preventScroll: true }));
+
+    function onKeyDown(e) {
+        if (e.key === 'ArrowRight') { goTo(cur + 1); e.preventDefault(); }
+        if (e.key === 'ArrowLeft')  { goTo(cur - 1); e.preventDefault(); }
+    }
 });
     /*  6. ABOUT — TIMELINE   */
     const timelineItems = document.querySelectorAll('.timeline-item');
