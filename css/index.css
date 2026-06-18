@@ -565,7 +565,7 @@ footer h4::after {
     .nav-hamburger { display: flex; }
     .slide-content { left: 5%; right: 5%; bottom: 10%; }
     .why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .why-badge { left: 1rem; bottom: 1rem; }
+    .why-badge { left: -0.5rem; bottom: -0.75rem; right: auto; width: auto; }
     .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
     .cta-btn-dark, .cta-btn-gold { margin: .4rem 0; display: flex; }
     .hero-folio { display: none; }
