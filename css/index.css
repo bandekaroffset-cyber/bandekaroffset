@@ -45,7 +45,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.1); }
 }
 .nav-logo span { 
 	font-family: 'DM Sans', sans-serif;
-	font-size: 1.3rem;
+	font-size: 1rem;
 	font-style: italic;
 	color: var(--gold);
 }
