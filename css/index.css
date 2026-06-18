@@ -55,7 +55,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.1); }
 
 .nav-phone {
     font-size: .9rem; font-weight: 500; color: var(--mid);
-    display: flex; align-items: center; gap: .4rem;
+    display: flex; align-items: center; gap: .8rem;
     text-decoration: none; transition: color .2s;
 }
 .nav-phone:hover { color: var(--gold); }
