@@ -44,7 +44,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.1); }
     display: flex; align-items: center; gap: .6rem;
 }
 .nav-logo span { color: var(--gold); }
-.nav-logo img { height: 42px; width: auto; }
+.nav-logo img { height: 50px; width: auto; }
 
 .nav-right { display: flex; align-items: center; gap: 2rem; }
 
