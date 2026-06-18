@@ -468,7 +468,7 @@ footer h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
     .nav-links, .nav-phone { display: none; }
     .nav-hamburger { display: flex; }
     .intro-grid { grid-template-columns: 1fr; gap: 3.5rem; }
-    .intro-img-badge { right: 1rem; bottom: -1rem; }
+    .intro-img-badge { right: -0.5rem; bottom: -0.75rem; right: auto; width: auto; }
     .intro-img::before { display: none; }
     .values-grid { grid-template-columns: 1fr 1fr; }
     .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
