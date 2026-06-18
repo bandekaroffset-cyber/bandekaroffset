@@ -229,6 +229,12 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 
 
 }
+/* effect */
+.intro-img::before {
+    content: ''; position: absolute;
+    inset: -8px; border: 1px solid var(--rule);
+    border-radius: 3px; z-index: -1;
+    background: var(--sepia-dark);
 
 .intro-img-badge {
     position: absolute; 
