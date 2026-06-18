@@ -39,7 +39,7 @@ nav {
 nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 
 .nav-logo {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Tangerine', cursive;
     font-weight: 900; font-size: 1.4rem;
     letter-spacing: -.5px; color: var(--ink);
     text-decoration: none;
