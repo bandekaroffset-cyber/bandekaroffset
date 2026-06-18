@@ -147,41 +147,86 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     /* 5. SERVICE IMAGE CAROUSELS */
-    const carousels = document.querySelectorAll('.service-carousel');
+const carousels = document.querySelectorAll('.service-carousel');
 
 carousels.forEach((carousel, offset) => {
     const imgs = carousel.querySelectorAll('img');
     if (imgs.length < 2) return;
 
-    let cur = 0;
-    let timer = null;
+    let cur = 0, timer = null;
+    let dragStartX = 0, dragging = false, moved = false;
 
-    function nextImg() {
+    /* ── build dot strip ── */
+    const dotWrap = document.createElement('div');
+    dotWrap.className = 'carousel-dots';
+    imgs.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', `Slide ${i + 1}`);
+        d.addEventListener('click', () => { goTo(i); resetTimer(); });
+        dotWrap.appendChild(d);
+    });
+    carousel.after(dotWrap);
+
+    function getDots() { return dotWrap.querySelectorAll('.dot'); }
+
+    function goTo(n) {
         imgs[cur].classList.remove('active');
-        cur = (cur + 1) % imgs.length;
+        getDots()[cur].classList.remove('active');
+        cur = (n + imgs.length) % imgs.length;
         imgs[cur].classList.add('active');
+        getDots()[cur].classList.add('active');
     }
 
-    function startCarousel() {
-        if (timer) return; // already running
+    function nextImg() { goTo(cur + 1); }
+    function prevImg() { goTo(cur - 1); }
+
+    function startTimer() {
+        if (timer) return;
         timer = setInterval(nextImg, 3200);
     }
+    function stopTimer()  { clearInterval(timer); timer = null; }
+    function resetTimer() { stopTimer(); startTimer(); }
 
-    function stopCarousel() {
-        clearInterval(timer);
-        timer = null;
+    /* ── touch / mouse drag ── */
+    function onDragStart(x) {
+        dragStartX = x; dragging = true; moved = false;
+        carousel.classList.add('dragging');
+        stopTimer();
+    }
+    function onDragEnd(x) {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove('dragging');
+        const diff = dragStartX - x;
+        if (Math.abs(diff) > 40) {
+            diff > 0 ? nextImg() : prevImg();
+            moved = true;
+        }
+        startTimer();
     }
 
+    carousel.addEventListener('touchstart', e => onDragStart(e.changedTouches[0].clientX),
+        { passive: true });
+    carousel.addEventListener('touchend',   e => onDragEnd(e.changedTouches[0].clientX),
+        { passive: true });
+
+    carousel.addEventListener('mousedown', e => onDragStart(e.clientX));
+    carousel.addEventListener('mouseup',   e => onDragEnd(e.clientX));
+    carousel.addEventListener('mouseleave', e => {
+        if (dragging) onDragEnd(e.clientX);
+        else startTimer();
+    });
+    carousel.addEventListener('mouseenter', stopTimer);
+
+    /* ── auto-play with IntersectionObserver ── */
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                setTimeout(startCarousel, offset * 700); // stagger start
-            } else {
-                stopCarousel();
-            }
+            entry.isIntersecting
+                ? setTimeout(startTimer, offset * 700)
+                : stopTimer();
         });
-    }, { threshold: 0.3 }); // 30% of carousel must be visible to count
-
+    }, { threshold: 0.3 });
     observer.observe(carousel);
 });
 
