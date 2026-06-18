@@ -471,6 +471,7 @@ footer h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
 }
 .service-carousel.dragging { cursor: grabbing; }
 
+
 .service-carousel img {
     width: 100%;
     display: none;
@@ -480,6 +481,8 @@ footer h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
     transition: opacity .25s ease;
 }
 .service-carousel img.active { display: block; }
+
+.service-carousel:focus { outline: none; }
 
 /* dot strip */
 .carousel-dots {
