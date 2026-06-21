@@ -246,7 +246,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 }
 
 .info-card-text h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'DM Sans', serif;
     font-size: .95rem; font-weight: 700; margin-bottom: .3rem;
 }
 .info-card-text p,
