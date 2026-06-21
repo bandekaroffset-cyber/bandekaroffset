@@ -196,6 +196,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.1); }
 .slide-content h1 em { font-style: italic; color: var(--gold-light); }
 
 .slide-content p {
+	font-family: 'DM Sans', serif;
     font-size: 1rem; font-weight: 300; line-height: 1.75;
     opacity: .82; max-width: 460px;
 }
