@@ -237,6 +237,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
     border-radius: 2px;
 }
 
+
 /* Badge overlaid on image */
 .img-badge {
     position: absolute; top: 1rem; left: 1rem;
@@ -252,6 +253,9 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.09); }
 .service-carousel img { width: 100%; display: none; border-radius: 2px; }
 .service-carousel img.active { display: block; }
 
+.service-img-wrap reveal h2{
+	font-family: 'Tangerine', cursive;
+}
 /* Service text */
 .service-text .service-num {
     font-family: 'Playfair Display', serif;
