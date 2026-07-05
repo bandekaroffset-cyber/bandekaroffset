@@ -81,7 +81,6 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(15,14,12,.1); }
     cursor: pointer; padding: 6px; background: none; border: none;
 }
 .nav-hamburger span {
-	align-items: center;
     display: block; width: 22px; height: 2px;
     background: var(--ink); border-radius: 2px; transition: .3s;
 }
