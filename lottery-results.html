@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lottery Results — Bandekar Offset</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Fonts are loaded by the @import at the top of css/lottery-results.css -->
+    <link rel="stylesheet" href="css/lottery-results.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="images/Bandekar Offset logo.webp" alt="Bandekar Offset">
+            <h4>Printing pioneers since <span>1966</span></h4>
+        </a>
+
+        <div class="nav-right">
+            <a href="tel:+919422437236" class="nav-phone">
+                <i class="fa-solid fa-phone"></i>
+                +91 94224 37236
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="lottery-results.html" class="active">Lottery Results</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="lottery-results.html">Lottery Results</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-inner">
+            <span class="section-label">Bandekar Offset • Goa</span>
+
+            <h1>Lottery Results</h1>
+
+            <p>
+                Find the latest lottery results and announcements
+                in one convenient place.
+            </p>
+
+            <div class="breadcrumb-row">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Lottery Results</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="results-intro reveal">
+        <span class="section-label">Your Results, Made Simple</span>
+
+        <h2>Check Your Lottery Results</h2>
+
+        <div class="gold-rule center"></div>
+
+        <p>
+            Select a lottery category below to find its published results.
+            Results will be updated as soon as they are made available.
+        </p>
+    </section>
+
+
+    <!-- LOTTERY CATEGORIES -->
+    <section class="lottery-section">
+
+        <div class="lottery-container">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">Browse Categories</span>
+                    <h2>Lottery Categories</h2>
+                </div>
+
+                <p>Select a category to view its results.</p>
+            </div>
+
+
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">
+                    All Results
+                </button>
+
+                <button class="filter-btn" data-category="cap">
+                    Quepem
+                </button>
+
+                <button class="filter-btn" data-category="margao">
+                    Margao
+                </button>
+
+                <button class="filter-btn" data-category="festival">
+                    Festival Special
+                </button>
+            </div>
+
+
+            <!-- RESULT CARDS -->
+            <div class="results-grid">
+
+                <!-- CAP -->
+                <article class="result-card" data-category="cap">
+                    <div class="card-top">
+                        <span class="category-tag">Quepem</span>
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+
+                    <h3>Quepem Lottery</h3>
+
+                    <p>
+                        View published results for Quepem lottery draws.
+                    </p>
+
+                    <div class="card-divider"></div>
+
+                    <div class="result-status">
+                        <span class="status-dot"></span>
+                        Results will be updated here
+                    </div>
+
+                    <button class="view-result-btn"
+                        onclick="openLotteryPDF('Quepem Lottery', 'lottery-files/cap-result-01.pdf')">
+
+                        View Latest Result
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </article>
+
+
+                <!-- MARGAO -->
+                <article class="result-card" data-category="margao">
+                    <div class="card-top">
+                        <span class="category-tag">MARGAO</span>
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+
+                    <h3>Margao Lottery</h3>
+
+                    <p>
+                        Find the latest published Margao lottery results.
+                    </p>
+
+                    <div class="card-divider"></div>
+
+                    <div class="result-status">
+                        <span class="status-dot"></span>
+                        Results will be updated here
+                    </div>
+
+                    <button class="view-result-btn"
+                        onclick="openLotteryPDF('Margao Lottery', 'lottery-files/margao-result-01.pdf')">
+
+                        View Latest Result
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </article>
+
+
+                <!-- FESTIVAL -->
+                <article class="result-card" data-category="festival">
+                    <div class="card-top">
+                        <span class="category-tag">SPECIAL</span>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <h3>Festival Special</h3>
+
+                    <p>
+                        Check special lottery results during festivals
+                        and celebrations.
+                    </p>
+
+                    <div class="card-divider"></div>
+
+                    <div class="result-status">
+                        <span class="status-dot"></span>
+                        Results will be updated here
+                    </div>
+
+                    <button class="view-result-btn"
+                        onclick="openLotteryPDF('Festival Special', 'lottery-files/festival-result-01.pdf')">
+
+                        View Latest Result
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </article>
+
+            </div>
+
+        </div>
+
+        <!-- LOTTERY PDF POPUP -->
+        <div class="lottery-modal" id="lotteryViewer">
+
+            <div class="lottery-modal-content">
+
+                <div class="viewer-header">
+                    <h3 id="viewerTitle">Lottery Result</h3>
+
+                    <button type="button" id="closeViewer">
+                        &times;
+                    </button>
+                </div>
+
+                <iframe id="lotteryPdf" src="" title="Lottery Result PDF">
+                </iframe>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- INFORMATION SECTION -->
+    <section class="results-note reveal">
+        <div class="note-inner">
+            <div class="note-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div>
+                <h3>Important Information</h3>
+                <p>
+                    Please verify the draw details and ticket information
+                    carefully. Published result documents will be available
+                    on this page once uploaded.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA STRIP -->
+    <div class="contact-strip reveal">
+        <h2>Ready to start your print project?</h2>
+        <p>Call us or visit our shop in Curchorem, Goa — we're happy to help.</p>
+        <a href="https://wa.me/919422437236" class="cta-btn"><i class="fa-brands fa-whatsapp"></i>Connect with us on
+            WhatsApp</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3>Bandekar Offset</h3>
+                <p>Printing Pioneers since 1966. Quality offset printing for businesses, events, and individuals.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="lottery-results.html">Lottery Results</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Near Railway Gate, Opp. Mahadev Temple,<br>Curchorem, Goa 403706</p>
+                <p>📞 +91 94224 37236</p>
+                <p>🕐 Mon – Sat</p>
+                <p>Timings:<br>8:30 am – 1:30 pm, 2:30 pm – 5:30 pm</p>
+                <a href="https://maps.google.com/?q=Bandekar+Offset+Goa" target="_blank">📍 Get Directions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Bandekar Offset. All rights reserved.</span>
+            <span>Curchorem, Goa, India</span>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919422437236" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+
+
+    <!-- SCRIPTS -->
+    <script src="js/main.js"></script>
+    <script src="js/lottery-results.js"></script>
+
+
+
+</body>
+
+</html>
