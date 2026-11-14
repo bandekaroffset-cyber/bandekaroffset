@@ -650,3 +650,51 @@ footer h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 3
         height: 90vh;
     }
 }
+
+
+
+/* LOTTERY VIEWER BRANDING */
+.lottery-modal .viewer-branding {
+    width: 100%;
+    background: #f5f0e8;
+    padding: 20px;
+    border-bottom: 1px solid rgba(201, 150, 58, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+.lottery-modal .viewer-logo {
+    display: block;
+    width: 190px;
+    max-width: 40%;
+    height: auto;
+    margin: 0;
+}
+
+.lottery-modal .viewer-tagline {
+    color: #0f0e0c;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    margin: 0;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .lottery-modal .viewer-branding {
+        gap: 14px;
+        padding: 16px 10px;
+    }
+
+    .lottery-modal .viewer-logo {
+        width: 140px;
+    }
+
+    .lottery-modal .viewer-tagline {
+        font-size: 15px;
+    }
+}
+
