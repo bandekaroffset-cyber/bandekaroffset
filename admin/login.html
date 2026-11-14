@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login | Bandekar Offset</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <div class="brand">
+                <span class="brand-name">Bandekar Offset</span>
+                <span class="brand-subtitle">PRINTING & DESIGN</span>
+            </div>
+
+            <div class="login-heading">
+                <p class="welcome">EMPLOYEE PORTAL</p>
+                <h1>Welcome Back.</h1>
+                <p class="description">
+                    Sign in to manage your website content.
+                </p>
+            </div>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter your username"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="login-btn">
+                    Sign In <span>→</span>
+                </button>
+
+                <p id="loginMessage" class="login-message"></p>
+
+            </form>
+
+            <div class="login-footer">
+                <span>© 2026 Bandekar Offset</span>
+                <span>Authorized Employees Only</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

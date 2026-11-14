@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Bandekar Offset</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <h2>Bandekar Offset</h2>
+                <p>EMPLOYEE PORTAL</p>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-heading">MAIN MENU</p>
+
+                <button class="nav-link active" data-section="overview">
+                    <span>⌂</span> Overview
+                </button>
+
+                <button class="nav-link" data-section="services">
+                    <span>▤</span> Manage Services
+                </button>
+
+                <button class="nav-link" data-section="gallery">
+                    <span>▧</span> Gallery
+                </button>
+
+                <button class="nav-link" data-section="documents">
+                    <span>▤</span> Documents & PDFs
+                </button>
+
+                <button class="nav-link" data-section="lottery">
+                    <span>◇</span> Lottery Updates
+                </button>
+
+                <button class="nav-link" data-section="content">
+                    <span>✎</span> Website Content
+                </button>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <button id="logoutBtn" class="logout-btn">
+                    ↪ &nbsp; Logout
+                </button>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+                <div>
+                    <p class="header-label">BANDEKAR OFFSET / ADMIN</p>
+                    <h2>Website Management</h2>
+                </div>
+
+                <div class="employee-info">
+                    <div class="employee-avatar">E</div>
+                    <span>Employee</span>
+                </div>
+            </header>
+
+
+            <!-- OVERVIEW -->
+            <section class="content-section active" id="overview">
+
+                <div class="welcome-section">
+                    <p class="section-label">EMPLOYEE WORKSPACE</p>
+                    <h1>Welcome Back!</h1>
+                    <p>Manage your website content easily from one place.</p>
+                </div>
+
+                <h3 class="section-title">What would you like to manage?</h3>
+
+                <div class="management-grid">
+
+                    <button class="management-card" data-go="services">
+                        <span class="card-icon">▤</span>
+                        <h3>Manage Services</h3>
+                        <p>Add, edit or remove services.</p>
+                        <span class="card-arrow">→</span>
+                    </button>
+
+                    <button class="management-card" data-go="gallery">
+                        <span class="card-icon">▧</span>
+                        <h3>Gallery</h3>
+                        <p>Upload and manage photographs.</p>
+                        <span class="card-arrow">→</span>
+                    </button>
+
+                    <button class="management-card" data-go="documents">
+                        <span class="card-icon">▤</span>
+                        <h3>Documents & PDFs</h3>
+                        <p>Upload and manage documents.</p>
+                        <span class="card-arrow">→</span>
+                    </button>
+
+                    <button class="management-card" data-go="lottery">
+                        <span class="card-icon">◇</span>
+                        <h3>Lottery Updates</h3>
+                        <p>Update lottery information.</p>
+                        <span class="card-arrow">→</span>
+                    </button>
+
+                    <button class="management-card" data-go="content">
+                        <span class="card-icon">✎</span>
+                        <h3>Website Content</h3>
+                        <p>Edit website text and information.</p>
+                        <span class="card-arrow">→</span>
+                    </button>
+
+                </div>
+
+                <div class="dashboard-note">
+                    <span>✦</span>
+                    <div>
+                        <strong>Website Management</strong>
+                        <p>Remember to review your changes before publishing them.</p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- OTHER SECTIONS: TO BE BUILT -->
+
+            <section class="content-section" id="services">
+
+                <p class="section-label">WEBSITE MANAGEMENT</p>
+                <h1>Manage Services</h1>
+                <p class="section-description">
+                    Add, edit and manage the services displayed on your website.
+                </p>
+
+                <div class="lottery-form-card">
+
+                    <h3 id="serviceFormHeading">Add New Service</h3>
+                    <p>Create or update a service displayed on your website.</p>
+
+                    <form id="serviceForm">
+
+                        <div class="form-group">
+                            <label for="serviceName">Service Name</label>
+                            <input type="text" id="serviceName" placeholder="Enter service name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceDescription">Service Description</label>
+                            <textarea id="serviceDescription" rows="4" placeholder="Describe this service..."
+                                required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceImage">Service Photograph (Optional)</label>
+                            <input type="file" id="serviceImage" accept="image/jpeg,image/png,image/webp">
+                        </div>
+
+                        <button type="submit" class="upload-btn" id="serviceSubmitBtn">
+                            + Add Service
+                        </button>
+
+                        <button type="button" class="cancel-edit-btn" id="cancelServiceEdit" hidden>
+                            Cancel Editing
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <div class="gallery-heading">
+                    <h3>Existing Services</h3>
+                    <span id="serviceCount">0 services</span>
+                </div>
+
+                <div class="service-list" id="serviceList">
+
+                    <div class="gallery-empty" id="serviceEmpty">
+                        <span>▧</span>
+                        <p>No services added yet.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <section class="content-section" id="gallery">
+
+                <p class="section-label">MEDIA MANAGEMENT</p>
+                <h1>Gallery</h1>
+                <p class="section-description">
+                    Upload and manage photographs displayed on your website.
+                </p>
+
+                <div class="gallery-toolbar">
+                    <div>
+                        <h3>Website Photographs</h3>
+                        <p>Manage your business photos and images.</p>
+                    </div>
+
+                    <button class="upload-btn" id="chooseImagesBtn">
+                        + Upload Images
+                    </button>
+                </div>
+
+                <input type="file" id="galleryInput" accept="image/*" multiple hidden>
+
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">↑</div>
+                    <h3>Upload your photographs</h3>
+                    <p>Choose images from your computer to preview them here.</p>
+                    <span>Supported formats: JPG, PNG, WEBP</span>
+                    <button class="browse-btn" id="browseImagesBtn">
+                        Browse Files
+                    </button>
+                </div>
+
+                <div class="gallery-heading">
+                    <h3>Selected Images</h3>
+                    <span id="imageCount">0 images</span>
+                </div>
+
+                <div class="gallery-grid" id="galleryGrid">
+
+                    <div class="gallery-empty" id="galleryEmpty">
+                        <span>▧</span>
+                        <p>No images selected yet.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <section class="content-section" id="documents">
+
+                <p class="section-label">FILE MANAGEMENT</p>
+                <h1>Documents & PDFs</h1>
+                <p class="section-description">
+                    Upload and manage downloadable documents on your website.
+                </p>
+
+                <div class="gallery-toolbar">
+                    <div>
+                        <h3>Website Documents</h3>
+                        <p>Manage your PDFs and downloadable files.</p>
+                    </div>
+
+                    <button class="upload-btn" id="chooseDocumentsBtn">
+                        + Upload PDF
+                    </button>
+                </div>
+
+                <input type="file" id="documentInput" accept=".pdf,application/pdf" multiple hidden>
+
+                <div class="upload-area" id="documentUploadArea">
+                    <div class="upload-icon">↑</div>
+                    <h3>Upload your documents</h3>
+                    <p>Select PDF files from your computer.</p>
+                    <span>Supported format: PDF (Maximum 5 MB per file)</span>
+
+                    <button class="browse-btn" id="browseDocumentsBtn">
+                        Browse Files
+                    </button>
+                </div>
+
+                <div class="gallery-heading">
+                    <h3>Uploaded Documents</h3>
+                    <span id="documentCount">0 documents</span>
+                </div>
+
+                <div class="document-grid" id="documentGrid">
+
+                    <div class="gallery-empty" id="documentEmpty">
+                        <span>▤</span>
+                        <p>No documents selected yet.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <section class="content-section" id="lottery">
+
+                <p class="section-label">WEBSITE UPDATES</p>
+                <h1>Lottery Updates</h1>
+                <p class="section-description">
+                    Add and manage lottery announcements, images and documents.
+                </p>
+
+                <div class="lottery-form-card">
+
+                    <h3>Add New Lottery Update</h3>
+                    <p>Create an announcement to display on your website.</p>
+
+                    <form id="lotteryForm">
+
+                        <div class="form-group">
+                            <label for="lotteryCategory">Lottery Category</label>
+                            <input type="text" id="lotteryCategory" placeholder="Enter category" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lotteryTitle">Lottery Title</label>
+                            <input type="text" id="lotteryTitle" placeholder="Enter lottery title" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lotteryDescription">Description</label>
+                            <textarea id="lotteryDescription" placeholder="Enter lottery details..."
+                                rows="4"></textarea>
+                        </div>
+
+                        <div class="lottery-file-fields">
+
+                            <div class="form-group">
+                                <label for="lotteryImage">Lottery Image (Optional)</label>
+                                <input type="file" id="lotteryImage" accept="image/jpeg,image/png,image/webp">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lotteryPDF">Lottery PDF (Required for new results)</label>
+                                <input type="file" id="lotteryPDF" accept=".pdf,application/pdf">
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="upload-btn" id="lotterySubmitBtn">
+                            + Add Lottery Update
+                        </button>
+
+                        <button type="button" class="cancel-edit-btn" id="cancelLotteryEdit" hidden>
+                            Cancel Editing
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <div class="gallery-heading">
+                    <h3>Existing Lottery Updates</h3>
+                    <span id="lotteryCount">0 updates</span>
+                </div>
+
+                <div class="lottery-list" id="lotteryList">
+
+                    <div class="gallery-empty" id="lotteryEmpty">
+                        <span>◇</span>
+                        <p>No lottery updates added yet.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <section class="content-section" id="content">
+
+                <p class="section-label">WEBSITE EDITING</p>
+                <h1>Website Content</h1>
+                <p class="section-description">
+                    Edit the information displayed on your public website.
+                </p>
+
+                <form id="websiteContentForm">
+
+                    <div class="content-edit-card">
+                        <h3>Homepage Information</h3>
+                        <p>Manage the main introduction visitors see.</p>
+
+                        <div class="form-group">
+                            <label for="homeHeading">Homepage Heading</label>
+                            <input type="text" id="homeHeading" placeholder="Enter homepage heading">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="homeDescription">Homepage Introduction</label>
+                            <textarea id="homeDescription" rows="4"
+                                placeholder="Enter homepage introduction"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="content-edit-card">
+                        <h3>About Us</h3>
+                        <p>Update your business introduction.</p>
+
+                        <div class="form-group">
+                            <label for="aboutHeading">About Us Heading</label>
+                            <input type="text" id="aboutHeading" placeholder="Enter About Us heading">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="aboutDescription">About Us Description</label>
+                            <textarea id="aboutDescription" rows="5"
+                                placeholder="Enter your business description"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="content-edit-card">
+                        <h3>Contact Information</h3>
+                        <p>Manage the contact details displayed on your website.</p>
+
+                        <div class="form-group">
+                            <label for="businessAddress">Business Address</label>
+                            <textarea id="businessAddress" rows="2" placeholder="Enter business address"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="businessPhone">Phone Number</label>
+                            <input type="tel" id="businessPhone" placeholder="Enter phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="businessEmail">Email Address</label>
+                            <input type="email" id="businessEmail" placeholder="Enter email address">
+                        </div>
+                    </div>
+
+                    <div class="content-save-area">
+                        <button type="submit" class="upload-btn">
+                            Save Changes
+                        </button>
+
+                        <p id="contentSaveMessage" aria-live="polite"></p>
+                    </div>
+
+                </form>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
